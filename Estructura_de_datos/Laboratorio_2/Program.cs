@@ -9,4 +9,4 @@ for (var i = 0; i <= n; i++)
 }
 
 
-Console.WriteLine(" lA SUMA ES :" + suma.ToString());
+Console.WriteLine($" La suma de {n} primero numeros : {suma}");
