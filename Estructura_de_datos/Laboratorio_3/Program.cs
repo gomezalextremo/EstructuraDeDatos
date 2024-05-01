@@ -6,31 +6,43 @@
 
 
 using System;
-using System.Diagnostics.Metrics;
+
 class Program
 {
     static void Main(string[] args)
     {
-        // solicitar al usuario que ingrese dos números
-        Console.WriteLine("ingrese el primer número:");
-        double num1 = Convert.ToDouble(Console.ReadLine());
+        // Solicitar al usuario que ingrese el primer número
+        Console.WriteLine("Por favor ingresa el primer número:");
+        double numero1 = Convert.ToDouble(Console.ReadLine());
 
-        Console.WriteLine("ingrese el segundo número:");
-        double num2 = Convert.ToDouble(Console.ReadLine());
+        // Solicitar al usuario que ingrese el segundo número
+        Console.WriteLine("Por favor ingresa el segundo número:");
+        double numero2 = Convert.ToDouble(Console.ReadLine());
 
-        // realizar las operaciones matemáticas
-        double suma = num1 + num2;
-        double resta = num1 - num2;
-        double multiplicacion = num1 * num2;
-        double division = num1 / num2;
+        // Realizar las operaciones matemáticas
+        double suma = numero1 + numero2;
+        double resta = numero1 - numero2;
+        double multiplicacion = numero1 * numero2;
 
-        // mostrar los resultados
-        Console.WriteLine($"la suma de {num1} y {num2} es: {suma}");
-        Console.WriteLine($"la resta de {num1} y {num2} es: {resta}");
-        Console.WriteLine($"la multiplicación de {num1} y {num2} es: {multiplicacion}");
-        Console.WriteLine($"la división de {num1} entre {num2} es: {division}");
+        // Verificar si el segundo número es distinto de cero para evitar división por cero
+        double division = 0;
+        if (numero2 != 0)
+        {
+            division = numero1 / numero2;
+        }
+        else
+        {
+            Console.WriteLine("Error: No se puede dividir entre cero.");
+        }
 
-        Console.ReadLine(); // esperar a que el usuario presione enter para salir
+        // Mostrar los resultados
+        Console.WriteLine($"Suma: {suma}");
+        Console.WriteLine($"Resta: {resta}");
+        Console.WriteLine($"Multiplicación: {multiplicacion}");
+        if (numero2 != 0)
+        {
+            Console.WriteLine($"División: {division}");
+        }
     }
 }
 
