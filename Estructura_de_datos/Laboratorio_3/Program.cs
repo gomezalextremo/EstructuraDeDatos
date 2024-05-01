@@ -1,9 +1,7 @@
 ﻿
+OPERACIONES BÁSICAS:
 
-// OPERACIONES BÁSICAS:
-
-// 1) REALIZA LA SUMA, RESTA, MULTIPLICACIÓN Y DIVISIÓN DE DOS NÚMEROS INGRESADOS POR EL USUARIO.      
-
+ 1) REALIZA LA SUMA, RESTA, MULTIPLICACIÓN Y DIVISIÓN DE DOS NÚMEROS INGRESADOS POR EL USUARIO.      
 
 using System;
 
@@ -24,7 +22,7 @@ class Program
         double resta = numero1 - numero2;
         double multiplicacion = numero1 * numero2;
 
-        // Verificar si el segundo número es distinto de cero para evitar división por cero
+        // Verificar si el segundo número es distinto de cero
         double division = 0;
         if (numero2 != 0)
         {
@@ -46,13 +44,9 @@ class Program
     }
 }
 
-
 //VERIFICACIÓN DE NÚMERO PAR O IMPAR:
 
 //2) SOLICITA UN NÚMERO AL USUARIO Y DETERMINA SI ES PAR O IMPAR.  
-
-
-using System;
 
 class Program
 {
@@ -72,13 +66,10 @@ class Program
     }
 }
 
-
 //ÁREA DE UN TRIÁNGULO:  
 
 //3) PIDE LA BASE Y LA ALTURA DE UN TRIÁNGULO AL USUARIO Y CALCULA SU ÁREA.  
 
-
-using System;
 
 class Program
 {
@@ -105,36 +96,46 @@ class Program
 
 //4) CREA UNA FUNCIÓN QUE CALCULE LA FACTORIAL DE UN NÚMERO.  
 
-
-using System;
-
 class Program
 {
     static void Main(string[] args)
     {
-        // Solicitar la base del triángulo al usuario
-        Console.WriteLine("Por favor ingresa la base del triángulo:");
-        double baseTriangulo = Convert.ToDouble(Console.ReadLine());
+        // Solicitar al usuario que ingrese un número para calcular su factorial
+        Console.WriteLine("Por favor ingresa un número para calcular su factorial:");
+        int numero = Convert.ToInt32(Console.ReadLine());
 
-        // Solicitar la altura del triángulo al usuario
-        Console.WriteLine("Por favor ingresa la altura del triángulo:");
-        double alturaTriangulo = Convert.ToDouble(Console.ReadLine());
+        // Calcular el factorial del número ingresado
+        long factorial = CalcularFactorial(numero);
 
-        // Calcular el área del triángulo
-        double areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+        // Mostrar el resultado
+        Console.WriteLine($"El factorial de {numero} es: {factorial}");
+    }
 
-        // Mostrar el área del triángulo
-        Console.WriteLine($"El área del triángulo es: {areaTriangulo}");
+    // Método para calcular el factorial de un número
+    static long CalcularFactorial(int n)
+    {
+        // Verificar si el número es negativo (no se puede calcular el factorial de números negativos)
+        if (n < 0)
+        {
+            throw new ArgumentException("No se puede calcular el factorial de un número negativo.");
+        }
+
+        // Inicializar el factorial como 1
+        long factorial = 1;
+
+        // Calcular el factorial del número
+        for (int i = 1; i <= n; i++)
+        {
+            factorial *= i;
+        }
+
+        return factorial;
     }
 }
-
 
 //NÚMERO PRIMO:
 
 //5) VERIFICA SI UN NÚMERO INGRESADO POR EL USUARIO ES PRIMO O NO
-
-
-using System;
 
 class Program
 {
@@ -182,13 +183,9 @@ class Program
     }
 }
 
-
 //INVERSIÓN DE CADENA:  
 
 //6) TOMA UNA CADENA DE TEXTO Y MUESTRA SU INVERSIÓN.  
-
-
-using System;
 
 class Program
 {
@@ -221,85 +218,76 @@ class Program
     }
 }
 
-
 //SUMA DE NÚMEROS PARES:  
 
 //7) CALCULA LA SUMA DE LOS NÚMEROS PARES EN UN RANGO ESPECIFICADO POR EL USUARIO.  
 
-
-using System;
-
 class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            // Solicitar al usuario los límites del rango
-            Console.WriteLine("Por favor ingresa el límite inferior del rango:");
-            int limiteInferior = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Algoritmo para sumar numero en un rango espeficado");
+        // Solicitar al usuario los límites del rango
+        Console.WriteLine("Por favor ingresa el límite inferior del rango:");
+        int limiteInferior = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Por favor ingresa el límite superior del rango:");
-            int limiteSuperior = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Por favor ingresa el límite superior del rango:");
+        int limiteSuperior = Convert.ToInt32(Console.ReadLine());
 
-            // Calcular la suma de los números pares en el rango especificado
-            int sumaPares = CalcularSumaPares(limiteInferior, limiteSuperior);
+        // Calcular la suma de los números pares en el rango especificado
+        int sumaPares = CalcularSumaPares(limiteInferior, limiteSuperior);
 
-            // Mostrar la suma de los números pares
-            Console.WriteLine($"La suma de los números pares en el rango [{limiteInferior}, {limiteSuperior}] es: {sumaPares}");
-        }
-
-        // Método para calcular la suma de los números pares en un rango
-        static int CalcularSumaPares(int limiteInferior, int limiteSuperior)
-        {
-            int suma = 0;
-
-            // Iterar a través de los números en el rango y sumar los pares
-            for (int i = limiteInferior; i <= limiteSuperior; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    suma += i;
-                }
-            }
-
-            return suma;
-        }
+        // Mostrar la suma de los números pares
+        Console.WriteLine($"La suma de los números pares en el rango [{limiteInferior}, {limiteSuperior}] es: {sumaPares}");
     }
 
+    // Método para calcular la suma de los números pares en un rango
+    static int CalcularSumaPares(int limiteInferior, int limiteSuperior)
+    {
+        int suma = 0;
 
-//LISTA DE CUADRADOS:  
-
-//8) CREA UNA LISTA DE LOS CUADRADOS DE LOS PRIMEROS 10 NÚMEROS NATURALES.  
-
-
-class Program
+        // Iterar a través de los números en el rango y sumar los pares
+        for (int i = limiteInferior; i <= limiteSuperior; i++)
         {
-            static void Main(string[] args)
+            if (i % 2 == 0)
             {
-                // Crear un array para almacenar los cuadrados de los primeros 10 números naturales
-                int[] cuadrados = new int[10];
-
-                // Calcular los cuadrados de los primeros 10 números naturales
-                for (int i = 1; i <= 10; i++)
-                {
-                    cuadrados[i - 1] = i * i; // Guardar el cuadrado de cada número en el array
-                }
-
-                // Mostrar los cuadrados en el array
-                Console.WriteLine("Los cuadrados de los primeros 10 números naturales son:");
-                foreach (int cuadrado in cuadrados)
-                {
-                    Console.WriteLine(cuadrado);
-                }
+                suma += i;
             }
+        }
+
+        return suma;
+    }
 }
 
+////LISTA DE CUADRADOS:  
+
+////8) CREA UNA LISTA DE LOS CUADRADOS DE LOS PRIMEROS 10 NÚMEROS NATURALES.  
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Crear un array para almacenar los cuadrados de los primeros 10 números naturales
+        int[] cuadrados = new int[10];
+
+        // Calcular los cuadrados de los primeros 10 números naturales
+        for (int i = 1; i <= 10; i++)
+        {
+            cuadrados[i - 1] = i * i; // Guardar el cuadrado de cada número en el array
+        }
+
+        // Mostrar los cuadrados en el array
+        Console.WriteLine("Los cuadrados de los primeros 10 números naturales son:");
+        foreach (int cuadrado in cuadrados)
+        {
+            Console.WriteLine(cuadrado);
+        }
+    }
+}
 
 //CONTADOR DE VOCALES:  
 
 //9) CUENTA EL NÚMERO DE VOCALES EN UNA CADENA DE TEXTO.  
-
-    
-using System;
 
 class Program
 {
@@ -337,13 +325,9 @@ class Program
     }
 }
 
-
 //NÚMEROS DE LA SERIE FIBONACCI:  
 
 //10) GENERA LOS PRIMEROS 10 NÚMEROS DE LA SERIE FIBONACCI.  
-
-    
-using System;
 
 class Program
 {
@@ -380,13 +364,10 @@ class Program
     }
 }
 
-  //ORDENAMIENTO DE LISTA:  
+//ORDENAMIENTO DE LISTA:  
 
-        //11) ORDENA UNA LISTA DE NÚMEROS INGRESADOS POR EL USUARIO DE MENOR A MAYOR.  
+//11) ORDENA UNA LISTA DE NÚMEROS INGRESADOS POR EL USUARIO DE MENOR A MAYOR.  
 
-
-
-        
 using System;
 
 class Program
@@ -419,26 +400,22 @@ class Program
     }
 }
 
-
- //PALÍNDROMO:  
+//PALÍNDROMO:  
 
 //12) VERIFICA SI UNA PALABRA INGRESADA POR EL USUARIO ES UN PALÍNDROMO.  
-
-
-using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // Solicitar al usuario que ingrese una palabra
+        Solicitar al usuario que ingrese una palabra
         Console.WriteLine("Por favor ingresa una palabra:");
         string palabra = Console.ReadLine();
 
-        // Verificar si la palabra es un palíndromo
+        Verificar si la palabra es un palíndromo
         bool esPalindromo = VerificarPalindromo(palabra);
 
-        // Mostrar el resultado
+        Mostrar el resultado
         if (esPalindromo)
         {
             Console.WriteLine($"{palabra} es un palíndromo.");
@@ -449,13 +426,13 @@ class Program
         }
     }
 
-    // Método para verificar si una palabra es un palíndromo
+    Método para verificar si una palabra es un palíndromo
     static bool VerificarPalindromo(string palabra)
     {
-        // Convertir la palabra a minúsculas para hacer la comparación de manera no sensible a mayúsculas/minúsculas
+        Convertir la palabra a minúsculas para hacer la comparación de manera no sensible a mayúsculas / minúsculas
         palabra = palabra.ToLower();
 
-        // Iterar a través de la mitad de la palabra y comparar los caracteres simétricos
+        Iterar a través de la mitad de la palabra y comparar los caracteres simétricos
         for (int i = 0; i < palabra.Length / 2; i++)
         {
             if (palabra[i] != palabra[palabra.Length - i - 1])
@@ -468,12 +445,9 @@ class Program
     }
 }
 
-
 //GENERADOR DE TABLAS DE MULTIPLICAR:  
+
 //13) CREA UN PROGRAMA QUE GENERE LA TABLA DE MULTIPLICAR DE UN NÚMERO INGRESADO POR EL USUARIO.  
-
-
-using System;
 
 class Program
 {
@@ -498,13 +472,9 @@ class Program
     }
 }
 
-
 //CÁLCULO DEL ÁREA DE UN CÍRCULO:  
 
 //14) PIDE EL RADIO DE UN CÍRCULO AL USUARIO Y CALCULA SU ÁREA.  
-
-
-using System;
 
 class Program
 {
@@ -532,8 +502,6 @@ class Program
 //SUMA DE DÍGITOS:  
 
 //15) TOMA UN NÚMERO ENTERO Y CALCULA LA SUMA DE SUS DÍGITOS.
-
-using System;
 
 class Program
 {
