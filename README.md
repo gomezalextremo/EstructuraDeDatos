@@ -1,5 +1,5 @@
 # EstructuraDeDatos
-Bienvenido a mi repositorio del curso de Estructura de datos
+Bienvenido a mi repositorio del curso
 
 Estructura de datos es un curso donde se ve temas como:
 - Recursividad
