@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Estructura_de_datos/Laboratorio_2/ProgramSimulator.cs
