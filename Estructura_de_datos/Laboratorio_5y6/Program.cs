@@ -52,7 +52,7 @@ public static void ImprimirPiramideInvertidaNumeros(int n)
     }
 }
 
-// Ejercicio 2: Escribe una función recursiva que imprima la tabla de multiplicar del n.
+// Ejercicio 5: Escribe una función recursiva que imprima la tabla de multiplicar del n.
 
 public static void TablaDeMultiplicar(int n, int multiplicador)
 {
@@ -84,7 +84,8 @@ int elementoCentral = matriz[filaCentral, columnaCentral];
 
 //10)Sumar dos matrices de diferentes tamaños:
 
-double[,] matrizResultado = new double[Math.Max(matriz1.GetLength(0), matriz2.GetLength(0)), Math.Max(matriz1.GetLength(1), matriz2.GetLength(1))];
+double[,] matrizResultado = new double[Math.Max(matriz1.GetLength(0), matriz2.GetLength(0)), 
+    Math.Max(matriz1.GetLength(1), matriz2.GetLength(1))];
 for (int i = 0; i < matrizResultado.GetLength(0); i++)
 {
     for (int j = 0; j < matrizResultado.GetLength(1); j++)
@@ -208,7 +209,8 @@ public static double EncontrarElementoMaximo(double[,] matriz)
     return maximo;
 }
 //Ejercicio 4:Encontrar la submatriz de mayor suma:
-public static double[,] EncontrarSubmatrizConMayorSuma(double[,] matriz, int filasSubmatriz, int columnasSubmatriz)
+public static double[,] EncontrarSubmatrizConMayorSuma(double[,] matriz, 
+    int filasSubmatriz, int columnasSubmatriz)
 {
     int filas = matriz.GetLength(0);
     int columnas = matriz.GetLength(1);
