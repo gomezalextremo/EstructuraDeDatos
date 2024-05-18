@@ -1,4 +1,4 @@
-namespace Clases_y_Objetos
+namespace Ejercicio2
 {
     internal static class Program
     {
